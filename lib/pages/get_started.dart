@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quickshop/buttons/custom_button.dart';
-import 'package:quickshop/pages/home/bottomnavbar/home_bottomnavbar.dart';
+import 'package:quickshop/bottom_navbar/home_bottomnavbar.dart';
 import 'package:quickshop/pages/sign_in/sign_up/sign_up.dart';
 import 'package:quickshop/provider/auth_provider.dart';
 

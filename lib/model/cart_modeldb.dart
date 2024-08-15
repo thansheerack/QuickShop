@@ -1,45 +1,50 @@
-import 'dart:core';
+import 'package:quickshop/model/product_modeldb.dart';
 
 class CartModeldb {
-  String name;
-  String id;
-  String image;
-  double price;
+  final ProductModeldb product;
   int quantity;
-  double total;
-  String productId;
 
   CartModeldb({
-    required this.id,
-    required this.name,
-    required this.image,
-    required this.price,
+    required this.product,
     required this.quantity,
-    required this.total,
-    required this.productId,
   });
 
   factory CartModeldb.fromMap(Map<String, dynamic> data) {
     return CartModeldb(
-      name: data['name'],
-      price: data['price'].toDouble,
-      image: data['image'],
-      id: data['id'],
-      quantity: data['quantity'],
-      total: data['total'].toDouble(),
-      productId: data['productId'],
+      quantity: data['quantity']?.toInt() ?? 0,
+      product: ProductModeldb.fromMap(data['product']),
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
-      'name': name,
-      'price': price,
-      'image': image,
-      'id': id,
       'quantity': quantity,
-      'total': total * quantity,
-      'productId': productId,
+      'product': product.toMap(),
     };
   }
+
+  CartModeldb copyWith({
+    ProductModeldb? product,
+    int? quantity,
+  }) {
+    return CartModeldb(
+      product: product ?? this.product,
+      quantity: quantity ?? this.quantity,
+    );
+  }
+
+  @override
+  String toString() => 'CartModeldb(product: $product, quantity: $quantity)';
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is CartModeldb &&
+        other.product == product &&
+        other.quantity == quantity;
+  }
+
+  @override
+  int get hashCode => product.hashCode ^ quantity.hashCode;
 }

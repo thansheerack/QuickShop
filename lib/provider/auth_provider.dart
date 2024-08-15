@@ -5,7 +5,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:quickshop/model/user_modeldb.dart';
 import 'package:quickshop/pages/sign_in/otp_screen.dart';
 import 'package:quickshop/utils/utils.dart';

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:provider/provider.dart';
 import 'package:quickshop/buttons/custom_button.dart';
 import 'package:quickshop/model/user_modeldb.dart';
-import 'package:quickshop/pages/home/bottomnavbar/home_bottomnavbar.dart';
+import 'package:quickshop/bottom_navbar/home_bottomnavbar.dart';
 import 'package:quickshop/provider/auth_provider.dart';
 import 'package:quickshop/text_field/user_info_textfield.dart';
 import 'package:quickshop/utils/utils.dart';
