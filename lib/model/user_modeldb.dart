@@ -1,5 +1,3 @@
-import 'package:quickshop/model/cart_modeldb.dart';
-
 class UserModeldb {
   String name;
   String email;

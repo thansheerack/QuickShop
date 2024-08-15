@@ -9,7 +9,7 @@ class CategoryFruits extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ProductProvider productProvider = ProductProvider.instance;
+    final ProductProvider productProvider = Get.put(ProductProvider());
     return SafeArea(
       child: Scaffold(
         body: Obx(() => GridView.count(

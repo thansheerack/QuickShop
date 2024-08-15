@@ -11,41 +11,42 @@ class AppbarHome extends StatelessWidget {
     final ap = Provider.of<AuthProvider>(context, listen: false);
 
     return ClipPath(
-      clipper: ArcClipper(),
+      clipper: WaveClipperTwo(),
       child: AppBar(
         toolbarHeight: 80,
         backgroundColor: const Color.fromARGB(255, 30, 102, 17),
-        title: Row(
-          children: [
-            Icon(
-              Icons.location_on,
-              color: Colors.white,
-              size: 35,
-            ),
-            Text(
-              'Choose your current location',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w300,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Row(
+            children: [
+              Icon(
+                Icons.location_on,
                 color: Colors.white,
+                size: 35,
               ),
-            ),
-          ],
+              Text(
+                'Choose your current location',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
         ),
+        leadingWidth: 70,
         leading: Builder(builder: (context) {
           return InkWell(
             onTap: () {
               Scaffold.of(context).openDrawer();
             },
             child: Container(
-              padding: const EdgeInsets.all(5),
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
               ),
-              height: 30,
-              width: 30,
               child: CircleAvatar(
-                radius: 30,
+                radius: 70,
                 backgroundImage: NetworkImage(ap.userModeldb.profilePic),
               ),
             ),

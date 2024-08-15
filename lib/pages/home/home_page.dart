@@ -2,9 +2,11 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:quickshop/model/product_modeldb.dart';
 import 'package:quickshop/pages/home/appbar/appbar_home.dart';
 import 'package:quickshop/pages/home/category_list/category_list.dart';
 import 'package:quickshop/pages/home/drawer_home.dart';
+import 'package:quickshop/pages/shopping_cart/addto_cart.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(170),
+          preferredSize: const Size.fromHeight(120),
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
